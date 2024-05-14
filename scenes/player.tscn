@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://chqwgx2bou2sd"]
+
+[ext_resource type="Texture2D" uid="uid://iek0qjf4o2iy" path="res://assets/sprites/player/priest3_v1_1.png" id="1_8r3rr"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_epqvg"]
+[ext_resource type="Texture2D" uid="uid://cce7rp5du37a7" path="res://assets/sprites/player/priest3_v1_2.png" id="2_wgy2o"]
+[ext_resource type="Texture2D" uid="uid://cpv3aigakvkgh" path="res://assets/sprites/player/priest3_v1_3.png" id="3_lg6ob"]
+[ext_resource type="Texture2D" uid="uid://cr3kiu7dhf5e4" path="res://assets/sprites/player/priest3_v1_4.png" id="4_2xt5y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8x862"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8r3rr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wgy2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lg6ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2xt5y")
+}],
+"loop": true,
+"name": &"PlayerAnimation",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxkmo"]
+radius = 8.0
+height = 16.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_epqvg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -8)
+sprite_frames = SubResource("SpriteFrames_8x862")
+animation = &"PlayerAnimation"
+autoplay = "PlayerAnimation"
+frame_progress = 0.147986
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -8)
+shape = SubResource("CapsuleShape2D_kxkmo")
