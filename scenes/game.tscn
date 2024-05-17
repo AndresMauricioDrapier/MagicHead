@@ -348,10 +348,6 @@ sources/0 = SubResource("TileSetAtlasSource_odf4y")
 [node name="Player" parent="." instance=ExtResource("1_k0hkd")]
 z_index = 2
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2, -7)
-zoom = Vector2(4, 4)
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_bgmfn")
 format = 2
